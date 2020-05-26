@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: postgres://vtedrihspdaqub:705a74baf790ab29b6ed91c0d5648a812ccd6dcb6a0dd69e0580a82d1ec43a53@ec2-46-137-84-140.eu-west-1.compute.amazonaws.com:5432/dpp7g1l7vk1oq
+    username: vtedrihspdaqub
+    password: 705a74baf790ab29b6ed91c0d5648a812ccd6dcb6a0dd69e0580a82d1ec43a53
     type: org.apache.tomcat.jdbc.pool.DataSource
 
   flyway:
