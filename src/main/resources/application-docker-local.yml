@@ -28,21 +28,3 @@ security:
     resource:
       jwt:
         key-value: 123456
-
-cloud:
-  aws:
-    credentials:
-      access-key: xxx
-      secret-key: xxx
-    s3:
-      bucketName: bahama-content-local
-      endpoint: http://localhost:4572
-
-apm:
-  url: https://sandbox-apm.rpdpymnt.com/
-  authUrl: https://sandbox-auth.rpdpymnt.com/oauth/token?grant_type=client_credentials
-  ipnUrl: https://enjawktovmoo.x.pipedream.net/
-  clientId: d3b41a42-bd7e-48bd-9689-e6773c40b798
-  clientSecret: f17062bd
-  admin-client-id: admin@bumin.com.tr
-  admin-client-secret: xxxx

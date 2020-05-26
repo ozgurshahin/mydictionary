@@ -8,7 +8,7 @@ spring:
   flyway:
     enabled: true
     clean-disabled: false
-#    baselineOnMigrate: true
+    baselineOnMigrate: true
 
   jpa:
     properties:
@@ -38,36 +38,12 @@ security:
   oauth2:
     resource:
       jwt:
-        key-value:
+        key-value: 123456
 
 server:
   servlet:
     context-path: /api
 
-
-cloud:
-  aws:
-    credentials:
-      access-key:
-      secret-key:
-    region:
-      static: eu-west-1
-      auto: false
-    s3:
-      bucketName:
-      preUrlExpireTime: 15 # minutes
-    stack:
-      auto: false
-
 exception:
   message:
     supportedLanguages: en
-
-apm:
-  url:
-  authUrl:
-  ipnUrl:
-  clientId:
-  clientSecret:
-  admin-client-id:
-  admin-client-secret:
