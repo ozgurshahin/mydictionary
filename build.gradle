@@ -77,6 +77,8 @@ dependencies {
     implementation "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.16'
 
+    compile group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+
 
 
     compileOnly 'org.projectlombok:lombok'
