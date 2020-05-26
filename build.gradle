@@ -76,6 +76,10 @@ dependencies {
     implementation "io.springfox:springfox-bean-validators:$swaggerVersion"
     implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
     implementation "org.apache.tomcat:tomcat-jdbc:$tomcatVersion"
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.16'
+
+    compile group: 'com.google.guava', name: 'guava', version: '20.0'
+
 
 
     compileOnly 'org.projectlombok:lombok'
