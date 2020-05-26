@@ -1,37 +1,27 @@
 spring:
-  profiles: default
   datasource:
     url: ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
 
+  jpa:
+    properties:
+      #      javax.persistence.schema-generation.scripts.action: create
+      #      javax.persistence.schema-generation.scripts.create-target: src/main/resources/sql/create.sql
+      hibernate:
+        hbm2ddl:
+          delimiter: ';'
+        jpa:
+          compliance:
+            global_id_generators: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
   flyway:
     enabled: true
     clean-disabled: false
     baselineOnMigrate: true
-
-  jpa:
-    properties:
-      org.hibernate.envers.global_with_modified_flag: true
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
-        hbm2ddl:
-          delimiter: ';'
-        temp:
-          use_jdbc_metadata_defaults: false
-    hibernate:
-      ddl-auto: validate
-
-logging:
-  level:
-    root: INFO
-    io.apm: INFO
-    org.springframework: WARN
-    org.hibernate: WARN
-    com.amazonaws: WARN
-    org.quartz: INFO
-    org.springframework.boot.web.embedded.tomcat.TomcatWebServer: INFO
-    org.apache.tomcat.jdbc: DEBUG
 
 
 security:
@@ -44,6 +34,13 @@ server:
   servlet:
     context-path: /api
 
-exception:
-  message:
-    supportedLanguages: en
+logging:
+  level:
+    root: INFO
+    io.apm: INFO
+    org.springframework: WARN
+    org.hibernate: WARN
+    com.amazonaws: WARN
+    org.quartz: INFO
+    org.springframework.boot.web.embedded.tomcat.TomcatWebServer: INFO
+    org.apache.tomcat.jdbc: DEBUG

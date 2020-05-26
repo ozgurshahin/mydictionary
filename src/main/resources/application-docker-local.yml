@@ -23,6 +23,7 @@ spring:
     clean-disabled: false
     baselineOnMigrate: true
 
+
 security:
   oauth2:
     resource:
