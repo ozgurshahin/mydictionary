@@ -1,4 +1,5 @@
 spring:
+  profiles: default
   datasource:
     url: ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
