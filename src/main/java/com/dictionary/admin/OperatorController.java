@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.NotNull;
 
 
-@Api(tags = {"Operator"})
+//@Api(tags = {"Operator"})
 @RestController
 @RequestMapping("/admin")
 @RequiredArgsConstructor(onConstructor = @__({@Autowired, @NotNull}))
@@ -24,7 +24,7 @@ public class OperatorController {
     private final CurrentPrinciple currentPrinciple;
 
     @GetMapping("/me")
-    @AdminApi
+//    @AdminApi
     @ApiOperation(value = "Get current admin principal", notes = "Permission : OPERATOR ")
     public ResponseEntity<Principle> me() {
         return ResponseEntity.ok(currentPrinciple.getPrinciple());
