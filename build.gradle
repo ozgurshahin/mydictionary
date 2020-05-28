@@ -42,7 +42,8 @@ dependencies {
 
     compileOnly "org.springframework:spring-context"
     compile "org.apache.commons:commons-lang3:${commonsLangVersion}"
-    compileOnly "javax.validation:validation-api"
+//    compileOnly "javax.validation:validation-api"
+    compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     compileOnly "javax.persistence:persistence-api:${javaPersistenceApiVersion}"
     compileOnly "javax.annotation:javax.annotation-api:${javaAnnotationApiVersion}"
     compile "org.apache.commons:commons-text:${commonsTextVersion}"
