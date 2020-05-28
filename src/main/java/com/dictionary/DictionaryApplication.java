@@ -19,7 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableJpaAuditing
 @EnableJpaRepositories(repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 @ComponentScan(basePackages = {"com"})
-@EnableWebMvc
+//@EnableWebMvc
 public class DictionaryApplication {
 
     public static void main(String[] args) {
