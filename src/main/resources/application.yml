@@ -20,7 +20,7 @@ spring:
 
   flyway:
     enabled: true
-    clean-disabled: true
+    clean-disabled: false
     baselineOnMigrate: true
 
 
