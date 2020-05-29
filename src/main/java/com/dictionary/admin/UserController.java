@@ -7,7 +7,6 @@ import com.dictionary.admin.dto.UserDTO;
 import com.dictionary.common.AdminApi;
 import com.dictionary.common.DomainEvents;
 import com.dictionary.domain.UserCreatedEvent;
-import com.dictionary.domain.exception.UserNotFoundException;
 import com.dictionary.iam.User;
 import com.dictionary.iam.UserRepository;
 import io.swagger.annotations.Api;
@@ -39,7 +38,7 @@ public class UserController {
         User user = User.create(command.getUserRole());
         userRepository.save(user);
         DomainEvents.raise(new UserCreatedEvent(user));
-        throw  new UserNotFoundException();
+        return userDTOConverter.convert(user);
     }
 
     @GetMapping("/list")
