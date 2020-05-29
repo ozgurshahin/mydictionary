@@ -1,25 +1,38 @@
 spring:
   datasource:
-    url:
-    username:
-    password:
-    type: org.apache.tomcat.jdbc.pool.DataSource
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+
+  jpa:
+    properties:
+      #      javax.persistence.schema-generation.scripts.action: create
+      #      javax.persistence.schema-generation.scripts.create-target: src/main/resources/sql/create.sql
+      hibernate:
+        hbm2ddl:
+          delimiter: ';'
+        jpa:
+          compliance:
+            global_id_generators: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
 
   flyway:
     enabled: true
     clean-disabled: true
+    baselineOnMigrate: true
 
-  jpa:
-    properties:
-      org.hibernate.envers.global_with_modified_flag: true
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
-        hbm2ddl:
-          delimiter: ';'
-        temp:
-          use_jdbc_metadata_defaults: false
-    hibernate:
-      ddl-auto: validate
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: 123456
+
+server:
+  servlet:
+    context-path: /api
 
 logging:
   level:
@@ -31,27 +44,3 @@ logging:
     org.quartz: INFO
     org.springframework.boot.web.embedded.tomcat.TomcatWebServer: INFO
     org.apache.tomcat.jdbc: DEBUG
-
-
-security:
-  oauth2:
-    authorization:
-      accessTokenValidity: 300
-      refreshTokenValidity: 300
-    resource:
-      jwt:
-        key-value:
-
-server:
-  servlet:
-    context-path: /api
-
-exception:
-  message:
-    supportedLanguages: en
-
-http:
-  ssl:
-    keyStorePath:
-    keyPassword:
-    storePassword: ${http.ssl.keyPassword}
