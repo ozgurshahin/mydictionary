@@ -1,7 +1,7 @@
 package com.dictionary.config;
 
 import com.dictionary.common.AdminApi;
-import com.dictionary.common.IntegrationApi;
+import com.dictionary.common.UserApi;
 import com.fasterxml.classmate.TypeResolver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -34,7 +34,7 @@ import java.util.*;
 public class SwaggerConfig implements ApplicationListener<ObjectMapperConfigured> {
 
     private static final String ADMIN_API_VERSION = "v1";
-    private static final String INTEGRATION_API_VERSION = "v1";
+    private static final String USER_API_VERSION = "v1";
     private static final String TOKEN_URL = "/api/oauth/token";
     private final TypeResolver typeResolver;
     private ObjectMapper objectMapper;
@@ -59,19 +59,19 @@ public class SwaggerConfig implements ApplicationListener<ObjectMapperConfigured
     }
 
     @Bean
-    public Docket integrationApi() {
+    public Docket userApi() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("Integration  API")
-                .version(INTEGRATION_API_VERSION)
+                .title("User  API")
+                .version(USER_API_VERSION)
                 .build();
 
         GrantType clientCredentialsGrant = new ClientCredentialsGrant(TOKEN_URL);
 
         return configureDocket()
                 .apiInfo(apiInfo)
-                .groupName("Integration API")
+                .groupName("User API")
                 .select()
-                .apis(RequestHandlerSelectors.withMethodAnnotation(IntegrationApi.class))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(UserApi.class))
                 .build()
                 .securitySchemes(Collections.singletonList(oauth2SecuritySchema(clientCredentialsGrant)))
                 .securityContexts(Collections.singletonList(securityContext()));

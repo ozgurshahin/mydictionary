@@ -26,7 +26,7 @@ import java.util.UUID;
 @RequestMapping("/admin/users")
 @RequiredArgsConstructor(onConstructor = @__({@Autowired, @NotNull}))
 @Transactional
-public class UserController {
+public class AdminController {
 
     private final UserRepository userRepository;
     private final UserDTOConverter userDTOConverter;

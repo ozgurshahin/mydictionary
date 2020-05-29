@@ -12,7 +12,7 @@ public class ExceptionMessageLookup {
         Map<String, String> map = new HashMap<>();
         map.put("4000", "ENTITY_NOT_FOUND");
 
-        map.put("6000", "INTEGRATION_SERVICE_NOT_FOUND_EXCEPTION");
+        map.put("6000", "USER_SERVICE_NOT_FOUND_EXCEPTION");
         map.put("6001", "FILE_STORAGE_EXCEPTION");
         map.put("6002", "PRE_SIGNED_URL");
         map.put("6003", "USER_NOT_FOUND_EXCEPTION");

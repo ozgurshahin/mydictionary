@@ -48,8 +48,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers(WHITE_LIST)
                 .permitAll()
                 .antMatchers("/**/admin/**").hasAnyAuthority(UserRole.OPERATOR.name())
-                .antMatchers("/**/mock/**").hasAnyAuthority(UserRole.OPERATOR.name(), UserRole.INTEGRATION.name())
-                .antMatchers("/**/integration/**").hasAnyAuthority(UserRole.INTEGRATION.name());
+                .antMatchers("/**/mock/**").hasAnyAuthority(UserRole.OPERATOR.name(), UserRole.USER.name())
+                .antMatchers("/**/user/**").hasAnyAuthority(UserRole.USER.name());
     }
 
     @Bean
