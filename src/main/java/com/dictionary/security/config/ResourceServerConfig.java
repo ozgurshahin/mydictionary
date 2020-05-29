@@ -26,9 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
             "/swagger-resources/**",
             "/swagger-ui.html",
             "/webjars/**",
-            "/actuator/**"/*,
-            "/api/swagger-ui.html#!/**",
-            "/api/swagger-ui.html"*/
+            "/actuator/**"
     };
 
     @Override
