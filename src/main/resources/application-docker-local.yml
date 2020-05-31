@@ -23,9 +23,31 @@ spring:
     clean-disabled: false
     baselineOnMigrate: true
 
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template: true
+    check-template-location: true
+    mode: HTML5
+    encoding: UTF-8
+    suffix: .html
+    prefix: classpath:/mail/
+
 
 security:
   oauth2:
     resource:
       jwt:
         key-value: 123456
+
+
+email:
+  sendgrid:
+    apiKey: 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
+    url: https://api.sendgrid.com/v3/Notification/send
+    from: info.dictionary@yandex.ru
+
+
+system:
+  urls:
+    operatorPasswordRecovery: https://local-test.test.net/admin/create-password

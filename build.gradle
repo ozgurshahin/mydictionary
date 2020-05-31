@@ -97,6 +97,10 @@ dependencies {
 
     compile group: 'org.springframework', name: 'spring-aspects', version: '3.1.2.RELEASE'
 
+    implementation 'com.sendgrid:sendgrid-java'
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
 
 }
 

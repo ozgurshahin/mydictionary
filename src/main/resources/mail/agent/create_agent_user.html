@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{email.AGENT_USER_CREATE.subject}"></title>
+</head>
+<body>
+<!-- Start -->
+<div style="background-color: #F1F3F4; padding-top: 60px; padding-bottom: 60px; font-size: 18px; line-height: 1.45em; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; color: rgba(0,0,0,0.75);">
+    <div style="max-width:550px; margin: auto;">
+
+        <div style="text-align: center; padding-bottom: 30px;">
+            <div style="max-width: 360px; margin: auto; letter-spacing: -0.6px; font-size: 22px;font-weight: 300;">
+                <th:block th:text="#{email.AGENT_USER_CREATE.HEADLINE}"></th:block>
+            </div>
+        </div>
+
+        <div style="padding: 40px 30px; background-color: #fff; text-align: center; letter-spacing: -0.40px;">
+            <div style="padding-bottom: 25px;">
+                <th:block th:text="#{email.addressing}"></th:block>
+                <strong>
+                    <th:block th:text="${fullName}"></th:block>,
+                </strong> <br/>
+                <th:block th:text="#{email.AGENT_USER_CREATE.content_1}"></th:block>
+            </div>
+            <div style="padding-bottom: 25px;">
+                <th:block th:text="#{email.AGENT_USER_CREATE.content_2}"></th:block>
+            </div>
+            <div>
+                <a th:href="${credentialRecoveryToken}" style="color: #fff; font-size:14px; background:#4984EF; box-shadow: 0 4px 1px 0 rgba(0,0,0,0.05); border-radius: 4px; text-decoration: none; display: inline-block; min-width: 200px; margin: auto; padding: 18px 30px; line-height: 1.45em; letter-spacing: 0.3px;">
+                    <th:block th:text="#{email.AGENT_USER_CREATE.button}"></th:block>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- End -->
+</body>
+</html>

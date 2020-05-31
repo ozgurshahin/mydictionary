@@ -1,3 +1,4 @@
+create sequence seq_email start 1 increment 1;
 create sequence hibernate_sequence start 1 increment 1;
 create sequence seq_user start 1 increment 1;
 create table revinfo (rev int4 not null, revtstmp int8, primary key (rev));
@@ -7,3 +8,4 @@ alter table if exists "user" add constraint user_username_uq_idx unique (user_na
 alter table if exists "user" add constraint FKafkm2kr97ap7c0nv9l59okoay foreign key ("created_by_id") references "user";
 alter table if exists "user" add constraint FK4fol2gywb2a7tlsugg5vv9r92 foreign key ("updated_by_id") references "user";
 alter table if exists user_aud add constraint FK89ntto9kobwahrwxbne2nqcnr foreign key (rev) references revinfo;
+create table "email" (id int8 not null, created_at timestamp, entity_status varchar(255), guid uuid, updated_at timestamp, version int8, base_url varchar(255), file_name varchar(255), "to" varchar(255), language varchar(255), sender_name varchar(255), status varchar(255), subject varchar(255), type varchar(255), "created_by_id" int8, "updated_by_id" int8, primary key (id));

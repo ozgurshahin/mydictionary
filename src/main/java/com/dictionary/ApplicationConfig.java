@@ -30,7 +30,7 @@ public class ApplicationConfig {
     @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasenames("i18n/exceptions");
+        messageSource.setBasenames("i18n/exceptions", "i18n/validations", "i18n/emails");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }

@@ -17,6 +17,7 @@ public class ExceptionMessageLookup {
         map.put("6002", "PRE_SIGNED_URL");
         map.put("6003", "USER_NOT_FOUND_EXCEPTION");
         map.put("6004", "FILE_NOT_FOUND");
+        map.put("6006","EMAIL_DELIVERY_FAILED");
 
         value = Collections.unmodifiableMap(map);
     }
