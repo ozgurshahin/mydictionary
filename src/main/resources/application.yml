@@ -64,4 +64,4 @@ email:
 
 system:
   urls:
-    operatorPasswordRecovery: https://local-ledger.fingates.net/admin/create-password
+    operatorPasswordRecovery: https://local-local/admin/create-password
